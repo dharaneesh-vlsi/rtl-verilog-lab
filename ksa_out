@@ -1,0 +1,121 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x56aefe64a210 .scope module, "tb_ksa" "tb_ksa" 2 3;
+ .timescale 0 0;
+v0x56aefe666050_0 .var "a", 3 0;
+v0x56aefe666130_0 .var "b", 3 0;
+v0x56aefe6661d0_0 .var "cin", 0 0;
+v0x56aefe666270_0 .net "cout", 0 0, L_0x56aefe667380;  1 drivers
+v0x56aefe666340_0 .net "sum", 3 0, L_0x56aefe667990;  1 drivers
+S_0x56aefe64a3a0 .scope module, "dut" "ksa_4bit" 2 10, 3 1 0, S_0x56aefe64a210;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 4 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0x56aefe6663e0 .functor XOR 4, v0x56aefe666050_0, v0x56aefe666130_0, C4<0000>, C4<0000>;
+L_0x56aefe666520 .functor AND 4, v0x56aefe666050_0, v0x56aefe666130_0, C4<1111>, C4<1111>;
+L_0x56aefe666770 .functor AND 1, L_0x56aefe666680, v0x56aefe6661d0_0, C4<1>, C4<1>;
+L_0x56aefe666880 .functor OR 1, L_0x56aefe666590, L_0x56aefe666770, C4<0>, C4<0>;
+L_0x56aefe666b30 .functor AND 1, L_0x56aefe666a60, L_0x56aefe666880, C4<1>, C4<1>;
+L_0x56aefe666c40 .functor OR 1, L_0x56aefe6669c0, L_0x56aefe666b30, C4<0>, C4<0>;
+L_0x56aefe666f10 .functor AND 1, L_0x56aefe666e30, L_0x56aefe666c40, C4<1>, C4<1>;
+L_0x56aefe666f80 .functor OR 1, L_0x56aefe666d90, L_0x56aefe666f10, C4<0>, C4<0>;
+L_0x56aefe667270 .functor AND 1, L_0x56aefe667180, L_0x56aefe666f80, C4<1>, C4<1>;
+L_0x56aefe667380 .functor OR 1, L_0x56aefe6670e0, L_0x56aefe667270, C4<0>, C4<0>;
+L_0x56aefe6675e0 .functor XOR 1, L_0x56aefe667540, v0x56aefe6661d0_0, C4<0>, C4<0>;
+L_0x56aefe667750 .functor XOR 1, L_0x56aefe667650, L_0x56aefe666880, C4<0>, C4<0>;
+L_0x56aefe6678d0 .functor XOR 1, L_0x56aefe667830, L_0x56aefe666c40, C4<0>, C4<0>;
+L_0x56aefe667c80 .functor XOR 1, L_0x56aefe667be0, L_0x56aefe666f80, C4<0>, C4<0>;
+v0x56aefe6394a0_0 .net *"_ivl_13", 0 0, L_0x56aefe6669c0;  1 drivers
+v0x56aefe638a30_0 .net *"_ivl_15", 0 0, L_0x56aefe666a60;  1 drivers
+v0x56aefe6647a0_0 .net *"_ivl_16", 0 0, L_0x56aefe666b30;  1 drivers
+v0x56aefe664860_0 .net *"_ivl_21", 0 0, L_0x56aefe666d90;  1 drivers
+v0x56aefe664940_0 .net *"_ivl_23", 0 0, L_0x56aefe666e30;  1 drivers
+v0x56aefe664a70_0 .net *"_ivl_24", 0 0, L_0x56aefe666f10;  1 drivers
+v0x56aefe664b50_0 .net *"_ivl_29", 0 0, L_0x56aefe6670e0;  1 drivers
+v0x56aefe664c30_0 .net *"_ivl_31", 0 0, L_0x56aefe667180;  1 drivers
+v0x56aefe664d10_0 .net *"_ivl_32", 0 0, L_0x56aefe667270;  1 drivers
+v0x56aefe664df0_0 .net *"_ivl_39", 0 0, L_0x56aefe667540;  1 drivers
+v0x56aefe664ed0_0 .net *"_ivl_40", 0 0, L_0x56aefe6675e0;  1 drivers
+v0x56aefe664fb0_0 .net *"_ivl_45", 0 0, L_0x56aefe667650;  1 drivers
+v0x56aefe665090_0 .net *"_ivl_46", 0 0, L_0x56aefe667750;  1 drivers
+v0x56aefe665170_0 .net *"_ivl_5", 0 0, L_0x56aefe666590;  1 drivers
+v0x56aefe665250_0 .net *"_ivl_51", 0 0, L_0x56aefe667830;  1 drivers
+v0x56aefe665330_0 .net *"_ivl_52", 0 0, L_0x56aefe6678d0;  1 drivers
+v0x56aefe665410_0 .net *"_ivl_58", 0 0, L_0x56aefe667be0;  1 drivers
+v0x56aefe6654f0_0 .net *"_ivl_59", 0 0, L_0x56aefe667c80;  1 drivers
+v0x56aefe6655d0_0 .net *"_ivl_7", 0 0, L_0x56aefe666680;  1 drivers
+v0x56aefe6656b0_0 .net *"_ivl_8", 0 0, L_0x56aefe666770;  1 drivers
+v0x56aefe665790_0 .net "a", 3 0, v0x56aefe666050_0;  1 drivers
+v0x56aefe665870_0 .net "b", 3 0, v0x56aefe666130_0;  1 drivers
+v0x56aefe665950_0 .net "c1", 0 0, L_0x56aefe666880;  1 drivers
+v0x56aefe665a10_0 .net "c2", 0 0, L_0x56aefe666c40;  1 drivers
+v0x56aefe665ad0_0 .net "c3", 0 0, L_0x56aefe666f80;  1 drivers
+v0x56aefe665b90_0 .net "cin", 0 0, v0x56aefe6661d0_0;  1 drivers
+v0x56aefe665c50_0 .net "cout", 0 0, L_0x56aefe667380;  alias, 1 drivers
+v0x56aefe665d10_0 .net "g", 3 0, L_0x56aefe666520;  1 drivers
+v0x56aefe665df0_0 .net "p", 3 0, L_0x56aefe6663e0;  1 drivers
+v0x56aefe665ed0_0 .net "sum", 3 0, L_0x56aefe667990;  alias, 1 drivers
+L_0x56aefe666590 .part L_0x56aefe666520, 0, 1;
+L_0x56aefe666680 .part L_0x56aefe6663e0, 0, 1;
+L_0x56aefe6669c0 .part L_0x56aefe666520, 1, 1;
+L_0x56aefe666a60 .part L_0x56aefe6663e0, 1, 1;
+L_0x56aefe666d90 .part L_0x56aefe666520, 2, 1;
+L_0x56aefe666e30 .part L_0x56aefe6663e0, 2, 1;
+L_0x56aefe6670e0 .part L_0x56aefe666520, 3, 1;
+L_0x56aefe667180 .part L_0x56aefe6663e0, 3, 1;
+L_0x56aefe667540 .part L_0x56aefe6663e0, 0, 1;
+L_0x56aefe667650 .part L_0x56aefe6663e0, 1, 1;
+L_0x56aefe667830 .part L_0x56aefe6663e0, 2, 1;
+L_0x56aefe667990 .concat8 [ 1 1 1 1], L_0x56aefe6675e0, L_0x56aefe667750, L_0x56aefe6678d0, L_0x56aefe667c80;
+L_0x56aefe667be0 .part L_0x56aefe6663e0, 3, 1;
+    .scope S_0x56aefe64a210;
+T_0 ;
+    %vpi_call 2 19 "$dumpfile", "ksa.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x56aefe64a210 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x56aefe666050_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x56aefe666130_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56aefe6661d0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x56aefe666050_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x56aefe666130_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56aefe6661d0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x56aefe666050_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x56aefe666130_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56aefe6661d0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x56aefe666050_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x56aefe666130_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56aefe6661d0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_ksa.v";
+    "ksa.v";

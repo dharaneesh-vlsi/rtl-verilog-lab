@@ -1,110 +1,103 @@
-# RTL Verilog Lab – Logic Gates Design & Verification
+# RTL Lab – Verilog / VLSI Practice Repository
 
-## 📌 Overview
+## Overview
+This repository contains my **RTL (Register Transfer Level) design practice** using **Verilog HDL**.  
+The aim of this project is to build strong fundamentals in **Digital Electronics, VLSI Design, and CPU Datapath Concepts** through hands-on coding and simulation.
 
-This repository contains RTL designs and corresponding testbenches for basic combinational logic gates implemented using **Verilog HDL**.
-The project is created to build a strong foundation in **RTL coding, simulation, and functional verification**, following an industry-style workflow using open-source EDA tools.
-
-The repository is suitable for **VLSI/ASIC beginners**, RTL design aspirants, and students preparing for **RTL Design or Verification Engineer roles**.
-
----
-
-## 🎯 Objectives
-
-* Understand RTL-level design using Verilog HDL
-* Learn how to write clean and synthesizable combinational logic
-* Practice writing self-checking testbenches
-* Perform simulation and analyze waveforms
-* Follow industry-standard project structure and version control
+All modules are written, simulated, and verified using **Icarus Verilog** and **GTKWave** on **Ubuntu Linux**.
 
 ---
 
-## 🧩 Modules Implemented
-
-The following logic gates are implemented at RTL level:
-
-* AND Gate
-* OR Gate
-* NOT Gate
-* NAND Gate
-* NOR Gate
-* XOR Gate
-* XNOR Gate
-
-Each RTL module has a **corresponding testbench** for functional verification.
+## Tools & Technologies
+- Verilog HDL
+- Icarus Verilog (iverilog)
+- GTKWave
+- Ubuntu Linux
+- Git & GitHub
 
 ---
 
-## 🗂️ Project Structure
+## Repository Structure
 
-```
-rtl-verilog-lab/
-│
-├── rtl/        # RTL design files (.v)
-├── tb/         # Testbench files (.v)
-├── wave/       # Generated waveform files (.vcd)
-├── README.md
-└── .gitignore
-```
-
----
-
-## 🛠️ Tools Used
-
-| Purpose          | Tool                      |
-| ---------------- | ------------------------- |
-| RTL Coding       | Verilog HDL               |
-| Simulation       | Icarus Verilog (iverilog) |
-| Waveform Viewing | GTKWave                   |
-| OS Environment   | Ubuntu (WSL)              |
-| Version Control  | Git & GitHub              |
-
-All tools used are **open-source and industry-relevant**.
+rtl_lab/
+ ├── adders/
+ ├── comparator/
+ ├── gates/
+ ├── half_adder/
+ ├── rca/
+ ├── alu/
+ ├── mul_div/
+ ├── tb/
+ ├── wave/
+ ├── .gitignore
+ └── README.md
 
 ---
 
-## ▶️ Simulation Flow
+## Implemented Modules
 
-1. Write RTL code (`rtl/*.v`)
-2. Write corresponding testbench (`tb/*.v`)
-3. Compile using Icarus Verilog
-4. Run simulation to generate `.vcd` waveform
-5. View waveform using GTKWave
+### Arithmetic Circuits
+- Half Adder
+- Full Adder
+- Ripple Carry Adder
+- Subtractor
+- Multiplier
+  - 2-bit
+  - 4-bit
+  - Shift-and-Add (Sequential)
+- Divider (Restoring Method)
+- ALU (Arithmetic Logic Unit)
 
-### Example Commands
-
-```bash
-iverilog -o wave/or_gate.out rtl/or_gate.v tb/tb_or_gate.v
-vvp wave/or_gate.out
-gtkwave wave/or_gate.vcd
-```
-
----
-
-## 📈 Learning Outcomes
-
-* Hands-on experience with RTL design flow
-* Improved debugging skills using waveform analysis
-* Understanding of design vs verification separation
-* Exposure to Linux commands and Git-based workflows
+### Logic Circuits
+- Basic Gates (AND, OR, NOT, XOR, NAND, NOR)
+- Comparator
+  - 1-bit
+  - 4-bit
+  - Parameterized N-bit
 
 ---
 
-## 🚀 Future Enhancements
+## Simulation Instructions
 
-* Add multiplexers, adders, and encoders
-* Introduce SystemVerilog-based verification
-* Add assertions and functional coverage
-* Expand towards mini-SoC level blocks
+### Compile
+iverilog module.v tb_module.v
+
+### Run Simulation
+vvp a.out
+
+### View Waveform
+gtkwave file.vcd
+
+---
+
+## Git Ignore
+Output and temporary files are excluded using `.gitignore`:
+
+*.vcd  
+a.out  
+*.log  
 
 ---
 
-## 👤 Author
-
-**Dharaneesh Waran**
-Aspiring RTL Design & Verification Engineer
-Interested in VLSI, ASIC Design, and Embedded Systems
+## Learning Objectives
+- Understand RTL Coding Style
+- Build Arithmetic & Logic Units
+- Learn Sequential vs Combinational Design
+- Practice Testbench Writing
+- Prepare for VLSI / Digital Design Interviews
 
 ---
+
+## Future Enhancements
+- Multiplexers / Demultiplexers
+- Encoders / Decoders
+- Registers & Counters
+- Finite State Machines (FSM)
+- Mini CPU Design
+
+---
+
+**Author:** Dharaneesh Waran  
+**Focus Area:** VLSI, Embedded Systems, and Digital Design
 
 ⭐ *This repository reflects practical RTL design skills and continuous learning in VLSI domain.*

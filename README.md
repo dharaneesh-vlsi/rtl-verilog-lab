@@ -1,16 +1,13 @@
 # RTL Lab – Verilog / VLSI Practice Repository
 
 ## Overview
-This repository contains my **RTL (Register Transfer Level) design practice** using **Verilog HDL**.  
-The aim of this project is to build strong fundamentals in **Digital Electronics, VLSI Design, and CPU Datapath Concepts** through hands-on coding and simulation.
-
-All modules are written, simulated, and verified using **Icarus Verilog** and **GTKWave** on **Ubuntu Linux**.
 
 ---
 
 ## Tools & Technologies
 - Verilog HDL
-- Icarus Verilog (iverilog)
+- Icarus Ve
+rilog (iverilog)
 - GTKWave
 - Ubuntu Linux
 - Git & GitHub
@@ -99,3 +96,8 @@ a.out
 
 **Author:** Dharaneesh Waran  
 **Focus Area:** VLSI, Embedded Systems, and Digital Design
+<<<<<<< HEAD
+=======
+
+⭐ *This repository reflects practical RTL design skills and continuous learning in VLSI domain.*
+>>>>>>> cf858fbfc75c1e2e193463bb2bef7e50c676bac5
